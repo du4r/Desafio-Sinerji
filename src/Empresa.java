@@ -17,6 +17,10 @@ public class Empresa {
         double totalPago = 0.0;
 
         for (Funcionario F: funcionarios){
+            int anosNaCasa = ano - F.getAnoContratacao();
+            if(anosNaCasa > 1){
+                F.setExtraAnual(F.getExtraAnual()*anosNaCasa);
+            }
             switch (F.cargo){
                 case Secretario:
                     totalPago += F.getSalario() + F.getExtraAnual() + F.getBeneficio();
@@ -44,8 +48,15 @@ public class Empresa {
         double totalPago = 0;
 
         for (Funcionario F: funcionarios){
+            int anosNaCasa = ano - F.getAnoContratacao();
+            if(anosNaCasa > 1){
+                F.setExtraAnual(F.getExtraAnual()*anosNaCasa);
+            }
             switch (F.cargo){
                 case Secretario:
+                    if(anosNaCasa > 1){
+                        F.setExtraAnual(F.getExtraAnual()*anosNaCasa);
+                    }
                     totalPago += F.getSalario() + F.getExtraAnual();
                     break;
                 case Vendedor:
@@ -64,6 +75,10 @@ public class Empresa {
         double totalPago = 0;
 
         for (Funcionario F: funcionarios){
+            int anosNaCasa = ano - F.getAnoContratacao();
+            if(anosNaCasa > 1){
+                F.setExtraAnual(F.getExtraAnual()*anosNaCasa);
+            }
             switch (F.cargo){
                 case Secretario:
                     totalPago += F.getBeneficio();
@@ -88,8 +103,11 @@ public class Empresa {
         List<Funcionario> funcionariosMaisBemPagos = new ArrayList<>(){};
 
         for (Funcionario F: funcionarios){
+            int anosNaCasa = ano - F.getAnoContratacao();
+            if(anosNaCasa > 1){
+                F.setExtraAnual(F.getExtraAnual()*anosNaCasa);
+            }
             switch (F.cargo){
-
                 case Vendedor:
                     double comissao = 0;
 
