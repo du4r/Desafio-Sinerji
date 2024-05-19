@@ -36,7 +36,7 @@ tendo as seguintes tabelas de dados:
 
 
 ### observações:
-- a execução do programa é dado a partir do arquivo main e exibirá os logs de cada função, ja dando alguns inputs de teste.
+- a execução do programa é dado a partir do arquivo main e exibirá os logs de cada função, ja dando alguns inputs de teste (EXECUTE APENAS UMA FUNÇÃO POR VEZ E COMENTE AS DEMAIS).
 - para representar os dados foi criado um arquivo DB apenas para melhor organizar.
 - o bonus por ano de serviço foi dado como um valor a ser diluido pelos 12 meses, mas tambem poderia ser dado em apenas 1 mes usando uma
   condicional em que o pagamento seria feito no ultimo mes do ano, como nao houve explicitação da forma de pagamento foi dado como gasto mensal.
