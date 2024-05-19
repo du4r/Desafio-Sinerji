@@ -18,14 +18,17 @@ public class Funcionario implements Comparable<Funcionario> {
                 this.setSalario(7000);
                 this.setExtraAnual((1000.0 / 12));
                 this.setBeneficio((this.salario / 100) * 20);
+                this.setAnoContratacao(anoContratacao);
                 break;
             case Vendedor:
                 this.setSalario(12000);
                 this.setExtraAnual((1800.0 / 12));
+                this.setAnoContratacao(anoContratacao);
                 break;
             case Gerente:
                 this.setSalario(20000);
                 this.setExtraAnual((3000.0 / 12));
+                setAnoContratacao(anoContratacao);
                 break;
             default:
                 this.setSalario(0.0);
