@@ -26,14 +26,13 @@ public class Empresa {
                     totalPago += F.getSalario() + F.getExtraAnual() + F.getBeneficio();
                     break;
                 case Vendedor:
-                    double comissao = 0.0;
 
                     for(Venda v : vendas){
                         if (F.getNome().equals(v.vendedor) && v.mes == mes && v.ano == ano){
-                            comissao = ((v.valor/100) * 30);
+                            F.setBeneficio(( (v.valor/100) * 30) );
                         }
                     }
-                    totalPago += F.getSalario() + F.getExtraAnual() + comissao;
+                    totalPago += F.getSalario() + F.getExtraAnual() + F.getBeneficio();
                     break;
                 case Gerente:
                     totalPago += F.getSalario() + F.getExtraAnual();
@@ -54,9 +53,6 @@ public class Empresa {
             }
             switch (F.cargo){
                 case Secretario:
-                    if(anosNaCasa > 1){
-                        F.setExtraAnual(F.getExtraAnual()*anosNaCasa);
-                    }
                     totalPago += F.getSalario() + F.getExtraAnual();
                     break;
                 case Vendedor:
@@ -84,14 +80,12 @@ public class Empresa {
                     totalPago += F.getBeneficio();
                     break;
                 case Vendedor:
-                    double comissao = 0;
-
                     for(Venda v : vendas){
                         if (F.getNome().equals(v.vendedor) && v.mes == mes && v.ano == ano){
-                            comissao = ((v.valor/100) * 30);
+                            F.setBeneficio(((v.valor/100) * 30));
                         }
                     }
-                    totalPago += F.getBeneficio() + comissao;
+                    totalPago += F.getBeneficio();
                     break;
             }
         }
@@ -109,12 +103,10 @@ public class Empresa {
             }
             switch (F.cargo){
                 case Vendedor:
-                    double comissao = 0;
-
                     for(Venda v : vendas){
                         if (F.getNome().equals(v.vendedor) && v.mes == mes && v.ano == ano){
-                            comissao = ((v.valor/100) * 30);
-                            F.setSalario(F.getSalario() + F.getExtraAnual() + comissao);
+                            F.setBeneficio(((v.valor/100) * 30));
+                            F.setSalario(F.getSalario() + F.getExtraAnual() + F.getBeneficio());
                         }
                     }
 
@@ -161,8 +153,7 @@ public class Empresa {
                     break;
             }
         }
-
-
+        
         return funcionariosMaisBemPagos.get(0).getNome();
     }
 
@@ -183,5 +174,5 @@ public class Empresa {
 
         return funcDoMes;
     }
-
+    
 }
